@@ -1,0 +1,64 @@
+# Default values for cloudflare-gateway-controller
+replicaCount: 1
+
+image:
+  repository: ghcr.io/georgepstaylor/cloudflare-gateway-controller
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+# Cloudflare credentials
+cloudflare:
+  # API token with Cloudflare Tunnel and DNS edit permissions
+  apiToken: ""
+  # Cloudflare account ID
+  accountId: ""
+  # Create secret from values (set to false if providing your own secret)
+  createSecret: true
+  # Name of existing secret (if createSecret is false)
+  existingSecret: ""
+
+# Cluster configuration
+cluster:
+  # DNS domain for the cluster (e.g., cluster.local, kube.gtlab.uk)
+  domain: "cluster.local"
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext:
+  runAsNonRoot: true
+
+securityContext:
+  allowPrivilegeEscalation: false
+  capabilities:
+    drop:
+      - ALL
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 128Mi
+  requests:
+    cpu: 10m
+    memory: 64Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+# Gateway API CRD installation
+gatewayAPI:
+  # Install Gateway API CRDs (set to false if already installed)
+  installCRDs: false
+  # Gateway API version
+  version: "v1.2.1"
