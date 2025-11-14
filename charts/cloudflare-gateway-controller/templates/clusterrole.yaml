@@ -5,78 +5,72 @@ metadata:
   labels:
     {{- include "cloudflare-gateway-controller.labels" . | nindent 4 }}
 rules:
-  - apiGroups:
-      - gateway.networking.k8s.io
-    resources:
-      - gatewayclasses
-      - gatewayclasses/status
-    verbs:
-      - get
-      - list
-      - watch
-      - update
-      - patch
-  - apiGroups:
-      - gateway.networking.k8s.io
-    resources:
-      - gateways
-      - gateways/status
-      - gateways/finalizers
-    verbs:
-      - get
-      - list
-      - watch
-      - update
-      - patch
-  - apiGroups:
-      - gateway.networking.k8s.io
-    resources:
-      - httproutes
-      - httproutes/status
-      - httproutes/finalizers
-    verbs:
-      - get
-      - list
-      - watch
-      - update
-      - patch
-  - apiGroups:
-      - ""
-    resources:
-      - services
-    verbs:
-      - get
-      - list
-      - watch
-  - apiGroups:
-      - ""
-    resources:
-      - secrets
-      - configmaps
-    verbs:
-      - get
-      - list
-      - watch
-      - create
-      - update
-      - patch
-      - delete
-  - apiGroups:
-      - apps
-    resources:
-      - deployments
-    verbs:
-      - get
-      - list
-      - watch
-      - create
-      - update
-      - patch
-      - delete
-  - apiGroups:
-      - ""
-    resources:
-      - events
-    verbs:
-      - create
-      - patch
+- apiGroups:
+  - ""
+  resources:
+  - configmaps
+  - secrets
+  - services
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - apps
+  resources:
+  - deployments
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - coordination.k8s.io
+  resources:
+  - leases
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - gateway.networking.k8s.io
+  resources:
+  - gatewayclasses
+  - gateways
+  - httproutes
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - gateway.networking.k8s.io
+  resources:
+  - gatewayclasses/status
+  - gateways/status
+  - httproutes/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - gateway.networking.k8s.io
+  resources:
+  - gateways/finalizers
+  - httproutes/finalizers
+  verbs:
+  - update
