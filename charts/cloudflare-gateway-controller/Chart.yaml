@@ -2,8 +2,8 @@ apiVersion: v2
 name: cloudflare-gateway-controller
 description: A Kubernetes Gateway API controller using Cloudflare Tunnels
 type: application
-version: 0.1.2
-appVersion: "0.0.1"
+version: 0.1.3
+appVersion: "0.1.7"
 keywords:
   - cloudflare
   - gateway-api
