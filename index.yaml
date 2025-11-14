@@ -3,6 +3,26 @@ entries:
   cloudflare-gateway-controller:
   - apiVersion: v2
     appVersion: 0.1.7
+    created: "2025-11-14T16:38:53.627987115Z"
+    description: A Kubernetes Gateway API controller using Cloudflare Tunnels
+    digest: 1e3c64731154dd55eabedcd5aae5261cf74f4701c216393fba0f308be689c74e
+    home: https://github.com/georgepstaylor/cloudflare-gateway-controller
+    keywords:
+    - cloudflare
+    - gateway-api
+    - tunnel
+    - ingress
+    maintainers:
+    - name: George Taylor
+    name: cloudflare-gateway-controller
+    sources:
+    - https://github.com/georgepstaylor/cloudflare-gateway-controller
+    type: application
+    urls:
+    - https://github.com/georgepstaylor/cloudflare-gateway-controller-helm-charts/releases/download/cloudflare-gateway-controller-0.1.5/cloudflare-gateway-controller-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v2
+    appVersion: 0.1.7
     created: "2025-11-14T16:28:18.944862475Z"
     description: A Kubernetes Gateway API controller using Cloudflare Tunnels
     digest: 09e9eb25cd8834641ec67223b78e598faec13e419b1f4e9d3261ecbc1f247e5d
@@ -61,4 +81,4 @@ entries:
     urls:
     - https://github.com/georgepstaylor/cloudflare-gateway-controller-helm-charts/releases/download/cloudflare-gateway-controller-0.1.2/cloudflare-gateway-controller-0.1.2.tgz
     version: 0.1.2
-generated: "2025-11-14T16:28:18.944876902Z"
+generated: "2025-11-14T16:38:53.628008104Z"
